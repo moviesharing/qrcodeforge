@@ -39,7 +39,7 @@ export function AppFooter() {
               className="hover:bg-accent hover:text-accent-foreground"
               title="Support QRCodeForge via PayPal"
             >
-              <Link href="https://www.paypal.com/paypalme/akosijphabs" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.paypal.com/ncp/payment/E684ESAKGVUF4" target="_blank" rel="noopener noreferrer">
                 <Coffee className="mr-2 h-4 w-4" />
                 Support Us
               </Link>
@@ -50,3 +50,4 @@ export function AppFooter() {
     </footer>
   );
 }
+
