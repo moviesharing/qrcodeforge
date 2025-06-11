@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://qrcodeforge.pages.dev/sitemap.xml
+
+# If your production domain is different, please update the Sitemap URL above.
