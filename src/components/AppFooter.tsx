@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Coffee } from 'lucide-react';
+import { Send } from 'lucide-react'; // Changed from Coffee to a more generic icon or remove
 
 export function AppFooter() {
   return (
@@ -42,31 +42,29 @@ export function AppFooter() {
             >
               <input type="hidden" name="cmd" value="_xclick" />
               <input type="hidden" name="business" value="akosijphabs@gmail.com" />
-              <input type="hidden" name="item_name" value="Tip for QRCodeForge" />
+              <input type="hidden" name="item_name" value="Support for QRCodeForge" />
               <input type="hidden" name="currency_code" value="USD" />
               <input type="hidden" name="no_shipping" value="1" />
-              {/* Allow user to input amount for _xclick */}
-              <Label htmlFor="tipAmountPayPal" className="sr-only">Amount (USD)</Label>
+              <Label htmlFor="supportAmountPayPal" className="sr-only">Amount (USD)</Label>
               <Input
                 type="number"
                 name="amount"
-                id="tipAmountPayPal"
+                id="supportAmountPayPal"
                 placeholder="USD"
                 min="0.01"
                 step="0.01"
                 required
                 className="h-9 w-20 px-2 py-1 text-sm bg-background border-input rounded-md focus:ring-primary focus:border-primary"
-                aria-label="Tip amount in USD"
+                aria-label="Support amount in USD"
               />
               <Button
                 type="submit"
                 variant="outline"
                 size="sm"
                 className="hover:bg-accent hover:text-accent-foreground"
-                title="Send a tip via PayPal"
+                title="Support QRCodeForge via PayPal"
               >
-                <Coffee className="mr-1.5 h-4 w-4" />
-                Send Tip
+                Support Us
               </Button>
             </form>
           </nav>
