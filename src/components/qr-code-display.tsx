@@ -1,3 +1,4 @@
+
 "use client";
 
 import type React from 'react';
@@ -112,10 +113,9 @@ export function QrCodeDisplay({ data, qrGenerated }: QrCodeDisplayProps) {
               value={data.value}
               size={qrSize}
               level={data.errorCorrectionLevel}
-              marginSize={data.margin}
+              // marginSize={data.margin} // Removed to prevent console warning due to a bug in qrcode.react v3.1.0
               bgColor="#ffffff"
               fgColor="#000000"
-              // @ts-ignore React types for SVG ref are sometimes tricky
               ref={svgRef} 
               className="rounded"
             />
