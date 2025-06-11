@@ -4,9 +4,7 @@
 import type React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Send } from 'lucide-react'; // Changed from Coffee to a more generic icon or remove
+import { Coffee } from 'lucide-react'; 
 
 export function AppFooter() {
   return (
@@ -34,38 +32,18 @@ export function AppFooter() {
             <Link href="/terms-and-conditions" className="hover:text-primary transition-colors">
               Terms
             </Link>
-            <form 
-              action="https://www.paypal.com/cgi-bin/webscr" 
-              method="post" 
-              target="_blank" 
-              className="inline-flex items-center gap-2"
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="hover:bg-accent hover:text-accent-foreground"
+              title="Support QRCodeForge via PayPal"
             >
-              <input type="hidden" name="cmd" value="_xclick" />
-              <input type="hidden" name="business" value="akosijphabs@gmail.com" />
-              <input type="hidden" name="item_name" value="Support for QRCodeForge" />
-              <input type="hidden" name="currency_code" value="USD" />
-              <input type="hidden" name="no_shipping" value="1" />
-              <Label htmlFor="supportAmountPayPal" className="sr-only">Amount (USD)</Label>
-              <Input
-                type="number"
-                name="amount"
-                id="supportAmountPayPal"
-                min="0.01"
-                step="0.01"
-                required
-                className="h-9 w-20 px-2 py-1 text-sm bg-background border-input rounded-md focus:ring-primary focus:border-primary"
-                aria-label="Support amount in USD"
-              />
-              <Button
-                type="submit"
-                variant="outline"
-                size="sm"
-                className="hover:bg-accent hover:text-accent-foreground"
-                title="Support QRCodeForge via PayPal"
-              >
+              <Link href="https://www.paypal.com/paypalme/akosijphabs" target="_blank" rel="noopener noreferrer">
+                <Coffee className="mr-2 h-4 w-4" />
                 Support Us
-              </Button>
-            </form>
+              </Link>
+            </Button>
           </nav>
         </div>
       </div>
