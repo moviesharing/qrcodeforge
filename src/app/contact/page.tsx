@@ -2,14 +2,14 @@
 "use client";
 
 import type React from 'react';
-import { MountainIcon, Mail, MessageSquare, Github, Send } from 'lucide-react';
+import { MountainIcon, Mail, Github, Send } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import type { Metadata } from 'next';
+// import type { Metadata } from 'next';
 
 // export const metadata: Metadata = {
 //   title: 'Contact Us | QRCodeForge',
@@ -24,7 +24,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen">
       <header className="py-6 px-4 md:px-6 border-b sticky top-0 bg-background/95 backdrop-blur z-10">
         <div className="container mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
@@ -38,13 +38,13 @@ export default function ContactPage() {
 
       <main className="flex-grow container mx-auto px-4 py-8 md:px-6 md:py-12">
         <div className="max-w-3xl mx-auto">
-          <Card className="shadow-lg">
+          <Card className="shadow-lg rounded-xl">
             <CardHeader>
-              <div className="flex items-center gap-3 mb-2">
-                <Send className="h-8 w-8 text-accent" />
-                <CardTitle className="text-3xl font-bold text-foreground">Contact Us</CardTitle>
+              <div className="flex items-center gap-3 mb-1">
+                <Send className="h-7 w-7 text-accent" />
+                <CardTitle className="text-2xl font-bold text-foreground">Contact Us</CardTitle>
               </div>
-              <CardDescription className="text-muted-foreground">
+              <CardDescription className="text-muted-foreground text-base">
                 Have questions, feedback, or just want to say hi? I&apos;d love to hear from you!
                 As a Vibe Coder, I&apos;m always open to suggestions.
               </CardDescription>

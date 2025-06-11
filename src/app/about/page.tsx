@@ -5,9 +5,9 @@ import type React from 'react';
 import { MountainIcon, Smile } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import type { Metadata } from 'next';
+// import type { Metadata } from 'next'; // Metadata needs to be handled in page.tsx or layout.tsx for server components, or via hooks/document for client ones.
 
-// export const metadata: Metadata = { // Metadata needs to be exported from page.tsx or layout.tsx, not here for client components this way.
+// export const metadata: Metadata = { 
 //   title: 'About QRCodeForge | Jphabs Khalifa',
 //   description: 'Learn more about QRCodeForge and its creator, Jphabs Khalifa.',
 // };
@@ -15,7 +15,7 @@ import type { Metadata } from 'next';
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen">
       <header className="py-6 px-4 md:px-6 border-b sticky top-0 bg-background/95 backdrop-blur z-10">
         <div className="container mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
@@ -29,14 +29,14 @@ export default function AboutPage() {
 
       <main className="flex-grow container mx-auto px-4 py-8 md:px-6 md:py-12">
         <div className="max-w-3xl mx-auto">
-          <Card className="shadow-lg">
+          <Card className="shadow-lg rounded-xl">
             <CardHeader className="pb-4">
               <div className="flex items-center gap-3">
-                <Smile className="h-8 w-8 text-accent" />
-                <CardTitle className="text-3xl font-bold text-foreground">About QRCodeForge</CardTitle>
+                <Smile className="h-7 w-7 text-accent" />
+                <CardTitle className="text-2xl font-bold text-foreground">About QRCodeForge</CardTitle>
               </div>
             </CardHeader>
-            <CardContent className="space-y-6 text-muted-foreground leading-relaxed">
+            <CardContent className="space-y-6 text-muted-foreground leading-relaxed text-base">
               <p className="text-lg">
                 Hey there! I&apos;m <strong className="text-card-foreground font-semibold">Jphabs Khalifa</strong>, the creator of QRCodeForge.
               </p>
@@ -56,10 +56,10 @@ export default function AboutPage() {
               <p>
                 Thanks for stopping by and checking out QRCodeForge. Your Vibe Coding journey inspires mine!
               </p>
-              <p className="font-medium">
+              <p className="font-medium text-card-foreground">
                 Happy QR coding!
               </p>
-              <p className="mt-4 pt-4 border-t border-border">
+              <p className="mt-6 pt-4 border-t border-border text-sm">
                 - Jphabs Khalifa
               </p>
             </CardContent>

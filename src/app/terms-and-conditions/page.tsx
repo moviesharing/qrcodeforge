@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { MountainIcon, FileText } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import type { Metadata } from 'next';
+// import type { Metadata } from 'next';
 
 // export const metadata: Metadata = {
 //   title: 'Terms and Conditions | QRCodeForge',
@@ -21,7 +21,7 @@ export default function TermsAndConditionsPage() {
   }, []);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen">
       <header className="py-6 px-4 md:px-6 border-b sticky top-0 bg-background/95 backdrop-blur z-10">
         <div className="container mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
@@ -35,17 +35,17 @@ export default function TermsAndConditionsPage() {
 
       <main className="flex-grow container mx-auto px-4 py-8 md:px-6 md:py-12">
         <div className="max-w-3xl mx-auto">
-          <Card className="shadow-lg">
+          <Card className="shadow-lg rounded-xl">
              <CardHeader className="pb-4">
-               <div className="flex items-center gap-3 mb-2">
-                <FileText className="h-8 w-8 text-accent" />
-                <CardTitle className="text-3xl font-bold text-foreground">Terms and Conditions</CardTitle>
+               <div className="flex items-center gap-3 mb-1">
+                <FileText className="h-7 w-7 text-accent" />
+                <CardTitle className="text-2xl font-bold text-foreground">Terms and Conditions</CardTitle>
               </div>
               <p className="text-sm text-muted-foreground">
                 Last updated: {lastUpdatedDate || new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
               </p>
             </CardHeader>
-            <CardContent className="space-y-6 text-muted-foreground leading-relaxed">
+            <CardContent className="space-y-6 text-muted-foreground leading-relaxed text-base">
               <p>
                 Please read these Terms and Conditions (&quot;Terms&quot;, &quot;Terms and Conditions&quot;) carefully before using the
                 QRCodeForge website (the &quot;Service&quot;) operated by Jphabs Khalifa (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;).
@@ -60,7 +60,7 @@ export default function TermsAndConditionsPage() {
               </p>
               
               <section>
-                <h3 className="text-xl font-semibold mt-2 mb-2 text-card-foreground">1. Use of Service</h3>
+                <h3 className="text-lg font-semibold mt-4 mb-2 text-card-foreground">1. Use of Service</h3>
                 <p>
                   QRCodeForge provides a tool for generating QR codes. The Service is provided for your personal and
                   non-commercial use, or for internal business use, subject to these Terms.
@@ -78,7 +78,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               <section>
-                <h3 className="text-xl font-semibold mt-2 mb-2 text-card-foreground">2. Intellectual Property</h3>
+                <h3 className="text-lg font-semibold mt-4 mb-2 text-card-foreground">2. Intellectual Property</h3>
                 <p>
                   The Service and its original content (excluding content encoded into QR codes by users), features, and functionality are and
                   will remain the exclusive property of Jphabs Khalifa and its licensors (if any). The Service is protected by copyright, trademark,
@@ -88,7 +88,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               <section>
-                <h3 className="text-xl font-semibold mt-2 mb-2 text-card-foreground">3. Disclaimer of Warranties</h3>
+                <h3 className="text-lg font-semibold mt-4 mb-2 text-card-foreground">3. Disclaimer of Warranties</h3>
                 <p>
                   The Service is provided on an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; basis. Your use of the Service is at your sole risk. The Service is provided without
                   warranties of any kind, whether express or implied, including, but not limited to, implied warranties of
@@ -102,7 +102,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               <section>
-                <h3 className="text-xl font-semibold mt-2 mb-2 text-card-foreground">4. Limitation of Liability</h3>
+                <h3 className="text-lg font-semibold mt-4 mb-2 text-card-foreground">4. Limitation of Liability</h3>
                 <p>
                   In no event shall Jphabs Khalifa, nor its directors, employees, partners, agents, suppliers, or affiliates (if any),
                   be liable for any indirect, incidental, special, consequential or punitive damages, including without
@@ -116,7 +116,7 @@ export default function TermsAndConditionsPage() {
               </section>
               
               <section>
-                <h3 className="text-xl font-semibold mt-2 mb-2 text-card-foreground">5. User Responsibility for QR Code Content</h3>
+                <h3 className="text-lg font-semibold mt-4 mb-2 text-card-foreground">5. User Responsibility for QR Code Content</h3>
                 <p>
                   You are solely responsible for the data and content you choose to encode into QR codes using our Service. This includes ensuring that
                   the content is lawful, does not infringe on any third-party rights, and is not malicious or harmful. We do not review,
@@ -126,7 +126,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               <section>
-                <h3 className="text-xl font-semibold mt-2 mb-2 text-card-foreground">6. Termination</h3>
+                <h3 className="text-lg font-semibold mt-4 mb-2 text-card-foreground">6. Termination</h3>
                 <p>
                   We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever,
                   including without limitation if you breach the Terms. All provisions of the Terms which by their nature should survive
@@ -136,7 +136,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               <section>
-                <h3 className="text-xl font-semibold mt-2 mb-2 text-card-foreground">7. Governing Law</h3>
+                <h3 className="text-lg font-semibold mt-4 mb-2 text-card-foreground">7. Governing Law</h3>
                 <p>
                   These Terms shall be governed and construed in accordance with the laws of [Your Jurisdiction - e.g., "your country/state"], 
                   without regard to its conflict of law provisions. (Please update this placeholder with your actual jurisdiction if desired, or remove if not applicable for a personal project).
@@ -144,7 +144,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               <section>
-                <h3 className="text-xl font-semibold mt-2 mb-2 text-card-foreground">8. Changes to Terms</h3>
+                <h3 className="text-lg font-semibold mt-4 mb-2 text-card-foreground">8. Changes to Terms</h3>
                 <p>
                   We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is
                   material we will try to provide at least 30 days&apos; notice prior to any new terms taking effect by posting the updated
@@ -157,7 +157,7 @@ export default function TermsAndConditionsPage() {
               </section>
 
               <section>
-                <h3 className="text-xl font-semibold mt-2 mb-2 text-card-foreground">9. Contact Us</h3>
+                <h3 className="text-lg font-semibold mt-4 mb-2 text-card-foreground">9. Contact Us</h3>
                 <p>
                   If you have any questions about these Terms, please{' '}
                   <Link href="/contact" className="underline hover:text-primary font-medium">contact us</Link>.
