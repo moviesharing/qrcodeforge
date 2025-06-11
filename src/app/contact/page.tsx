@@ -2,7 +2,7 @@
 "use client";
 
 import type React from 'react';
-import { MountainIcon, Mail, Github, Send } from 'lucide-react';
+import { MountainIcon, Mail, Send } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -20,7 +20,7 @@ export default function ContactPage() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Basic alert, replace with actual form submission logic (e.g., email API, Genkit flow)
-    alert("Form submission is not yet implemented. Please use the placeholder links for now!");
+    alert("Form submission is not yet implemented. Please use the email link for now!");
   };
 
   return (
@@ -50,19 +50,16 @@ export default function ContactPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-8">
-              <div className="grid md:grid-cols-1 gap-6"> {/* Changed to grid-cols-1 as GitHub is removed */}
+              <div className="grid md:grid-cols-1 gap-6">
                 <div className="flex items-start gap-4 p-4 border rounded-lg bg-card/50 hover:shadow-md transition-shadow">
                   <Mail className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-card-foreground">Email (Placeholder)</h3>
+                    <h3 className="font-semibold text-card-foreground">Email</h3>
                     <p className="text-sm text-muted-foreground">
-                      Reach out at: <a href="mailto:jphabs.khalifa@example.com" className="text-primary hover:underline">jphabs.khalifa@example.com</a>
-                      <br />(This is a placeholder, please update!)
+                      Reach out at: <a href="mailto:contact@qrcodeforge.pages.dev" className="text-primary hover:underline">contact@qrcodeforge.pages.dev</a>
                     </p>
                   </div>
                 </div>
-
-                {/* GitHub placeholder section removed */}
               </div>
               
               <div>
