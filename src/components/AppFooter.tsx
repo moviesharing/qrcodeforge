@@ -50,7 +50,6 @@ export function AppFooter() {
                 type="number"
                 name="amount"
                 id="supportAmountPayPal"
-                placeholder="USD"
                 min="0.01"
                 step="0.01"
                 required
