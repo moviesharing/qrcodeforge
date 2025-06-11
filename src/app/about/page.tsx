@@ -2,16 +2,10 @@
 "use client";
 
 import type React from 'react';
-import { MountainIcon, Smile } from 'lucide-react';
+import { MountainIcon, Smile, Coffee } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-// import type { Metadata } from 'next'; // Metadata needs to be handled in page.tsx or layout.tsx for server components, or via hooks/document for client ones.
-
-// export const metadata: Metadata = { 
-//   title: 'About QRCodeForge | Jphabs Khalifa',
-//   description: 'Learn more about QRCodeForge and its creator, Jphabs Khalifa.',
-// };
-
+import { Button } from '@/components/ui/button';
 
 export default function AboutPage() {
   return (
@@ -53,13 +47,34 @@ export default function AboutPage() {
                 This project is a labor of love, and like all my projects, it&apos;s a way for me to learn, experiment, and hopefully
                 provide something useful (or at least fun!) to others.
               </p>
-              <p>
-                Thanks for stopping by and checking out QRCodeForge. Your Vibe Coding journey inspires mine!
-              </p>
               <p className="font-medium text-card-foreground">
                 Happy QR coding!
               </p>
-              <p className="mt-6 pt-4 border-t border-border text-sm">
+
+              <div className="pt-6 mt-6 border-t border-border">
+                <h3 className="text-xl font-semibold text-card-foreground mb-2">Enjoying QRCodeForge?</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  If QRCodeForge has been helpful or just brightened your day, consider supporting its continued vibe coding.
+                  A small contribution helps keep the good vibes flowing! Hehe.
+                </p>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                  <input type="hidden" name="cmd" value="_xclick" />
+                  <input type="hidden" name="business" value="akosijphabs@gmail.com" />
+                  <input type="hidden" name="item_name" value="Vibe Fuel for QRCodeForge" />
+                  <input type="hidden" name="amount" value="5.00" />
+                  <input type="hidden" name="currency_code" value="USD" />
+                  <input type="hidden" name="no_shipping" value="1" />
+                  <Button type="submit" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground">
+                    <Coffee className="mr-2 h-4 w-4" />
+                    Support with PayPal ($5.00 USD)
+                  </Button>
+                </form>
+                <p className="text-xs text-muted-foreground mt-2">
+                  You&apos;ll be redirected to PayPal. Credit/debit card options are available there.
+                </p>
+              </div>
+
+              <p className="mt-8 pt-6 border-t border-border text-sm text-center">
                 - Jphabs Khalifa
               </p>
             </CardContent>
