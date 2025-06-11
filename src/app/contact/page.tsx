@@ -50,7 +50,7 @@ export default function ContactPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-8">
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-1 gap-6"> {/* Changed to grid-cols-1 as GitHub is removed */}
                 <div className="flex items-start gap-4 p-4 border rounded-lg bg-card/50 hover:shadow-md transition-shadow">
                   <Mail className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
@@ -62,16 +62,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 border rounded-lg bg-card/50 hover:shadow-md transition-shadow">
-                  <Github className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-card-foreground">GitHub (Placeholder)</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Projects & contributions: <a href="https://github.com/jphabskhalifa" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">github.com/jphabskhalifa</a>
-                      <br />(This is a placeholder, please update!)
-                    </p>
-                  </div>
-                </div>
+                {/* GitHub placeholder section removed */}
               </div>
               
               <div>
