@@ -1,3 +1,4 @@
+
 "use client";
 
 import type React from 'react';
@@ -13,9 +14,8 @@ export default function QRCodeForgePage() {
 
   const handleGenerateQr = (data: QrCodeInputData) => {
     setIsGenerating(true);
-    setQrGenerated(false); // Reset animation trigger
+    setQrGenerated(false); 
 
-    // Simulate generation delay for visual feedback if needed
     setTimeout(() => {
       setQrData({
         value: data.value,
@@ -23,12 +23,12 @@ export default function QRCodeForgePage() {
         margin: data.margin,
       });
       setIsGenerating(false);
-      setQrGenerated(true); // Trigger animation
+      setQrGenerated(true); 
     }, 200); 
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-[calc(100vh_-_var(--footer-height,0px))]"> {/* Adjust for footer if needed */}
       <header className="py-6 px-4 md:px-6">
         <div className="container mx-auto flex items-center gap-2">
           <MountainIcon className="h-8 w-8 text-primary" />
@@ -39,21 +39,15 @@ export default function QRCodeForgePage() {
       </header>
 
       <main className="flex-grow container mx-auto px-4 py-8 md:px-6">
-        <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 w-full max-w-5xl mx-auto">
           <div>
             <QrCodeForm onSubmit={handleGenerateQr} isGenerating={isGenerating} />
           </div>
-          <div className="md:sticky md:top-8 h-fit"> {/* Sticky for desktop preview */}
+          <div className="md:sticky md:top-8 h-fit">
             <QrCodeDisplay data={qrData} qrGenerated={qrGenerated} />
           </div>
         </div>
       </main>
-
-      <footer className="py-6 px-4 md:px-6 border-t">
-        <div className="container mx-auto text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} QRCodeForge. All rights reserved.
-        </div>
-      </footer>
     </div>
   );
 }

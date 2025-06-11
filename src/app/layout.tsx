@@ -1,6 +1,9 @@
+
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import { AppFooter } from '@/components/AppFooter';
+import { CookieConsentBanner } from '@/components/CookieConsentBanner';
 
 export const metadata: Metadata = {
   title: 'QRCodeForge',
@@ -20,7 +23,11 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col">
-        {children}
+        <div className="flex-grow">
+          {children}
+        </div>
+        <AppFooter />
+        <CookieConsentBanner />
         <Toaster />
       </body>
     </html>
