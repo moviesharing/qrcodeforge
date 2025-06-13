@@ -56,7 +56,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-card-foreground">Email</h3>
                     <p className="text-sm text-muted-foreground">
-                      Reach out at: <a href="mailto:contact@qrcodeforge.pages.dev" className="text-primary hover:underline">contact@qrcodeforge.pages.dev</a>
+                      Reach out at: <a href="mailto:jphabswebsites@gmail.com" className="text-primary hover:underline">jphabswebsites@gmail.com</a>
                     </p>
                   </div>
                 </div>
@@ -82,7 +82,7 @@ export default function ContactPage() {
                     Send Message
                   </Button>
                 </form>
-                 <p className="text-xs text-muted-foreground mt-2">Note: This form is for demonstration and does not send emails yet.</p>
+                 <p className="text-xs text-muted-foreground mt-2">Note: This form is for demonstration and does not send emails yet. If you have issues with the form, please use the email link above.</p>
               </div>
 
               <p className="text-sm text-center text-muted-foreground pt-6 border-t border-border">
