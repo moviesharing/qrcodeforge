@@ -10,9 +10,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { useToast } from "@/hooks/use-toast";
 
 export default function ContactPage() {
   const [isClient, setIsClient] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     setIsClient(true);
@@ -20,7 +22,12 @@ export default function ContactPage() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    alert("Form submission is not yet implemented. Please use the email link for now!");
+    // Simulate form submission
+    toast({
+      title: "Message Sent!",
+      description: "Your message has been 'sent' (demo). I'll get back to you soon!",
+    });
+    (event.target as HTMLFormElement).reset(); // Clear form fields
   };
 
   return (
