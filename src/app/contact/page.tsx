@@ -3,6 +3,7 @@
 
 import type React from 'react';
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation'; // Import useSearchParams
 import { MountainIcon, Mail, Send } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -15,20 +16,24 @@ import { useToast } from "@/hooks/use-toast";
 export default function ContactPage() {
   const [isClient, setIsClient] = useState(false);
   const { toast } = useToast();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Simulate form submission
-    toast({
-      title: "Message Sent!",
-      description: "Your message has been 'sent' (demo). I'll get back to you soon!",
-    });
-    (event.target as HTMLFormElement).reset(); // Clear form fields
-  };
+  useEffect(() => {
+    if (searchParams.get('form_submission') === 'success') {
+      toast({
+        title: "Message Sent!",
+        description: "Your message has been sent. I'll get back to you soon!",
+      });
+      // Optional: Clean the URL query parameter
+      if (typeof window !== 'undefined') {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    }
+  }, [searchParams, toast]);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -70,20 +75,32 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">Send a Message (Demo)</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-4">Send a Message</h3>
                 {isClient && (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form 
+                    action="https://formsubmit.co/jphabswebsites@gmail.com" 
+                    method="POST" 
+                    className="space-y-4"
+                  >
+                    {/* FormSubmit Hidden Inputs */}
+                    <input type="hidden" name="_next" value="https://qrcodeforge.pages.dev/contact?form_submission=success" />
+                    <input type="hidden" name="_subject" value="New Contact Message from QRCodeForge" />
+                    <input type="hidden" name="_captcha" value="false" /> 
+                    {/* Honey pot - uncomment if spam becomes an issue */}
+                    {/* <input type="text" name="_honey" style={{display:"none"}} /> */}
+
+
                     <div>
                       <Label htmlFor="name" className="text-muted-foreground">Your Name</Label>
-                      <Input id="name" type="text" placeholder="Jphabs Khalifa" required className="mt-1"/>
+                      <Input id="name" type="text" name="name" placeholder="Jphabs Khalifa" required className="mt-1"/>
                     </div>
                     <div>
                       <Label htmlFor="email" className="text-muted-foreground">Your Email</Label>
-                      <Input id="email" type="email" placeholder="vibe.coder@example.com" required className="mt-1"/>
+                      <Input id="email" type="email" name="email" placeholder="vibe.coder@example.com" required className="mt-1"/>
                     </div>
                     <div>
                       <Label htmlFor="message" className="text-muted-foreground">Message</Label>
-                      <Textarea id="message" placeholder="Your awesome feedback or question..." required rows={5} className="mt-1"/>
+                      <Textarea id="message" name="message" placeholder="Your awesome feedback or question..." required rows={5} className="mt-1"/>
                     </div>
                     <Button type="submit" className="w-full sm:w-auto">
                       <Send className="mr-2 h-4 w-4" />
