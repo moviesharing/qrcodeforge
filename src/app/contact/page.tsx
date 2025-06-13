@@ -127,9 +127,9 @@ export default function ContactPage() {
               </CardDescription>
             </CardHeader>
 
-      <Suspense fallback={<div>Loading contact form...</div>}>
-        <ContactContent />
-      </Suspense>
+            <Suspense fallback={<div>Loading contact form...</div>}>
+              <ContactContent />
+            </Suspense>
           </Card>
         </div>
       </main>
