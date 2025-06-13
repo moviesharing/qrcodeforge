@@ -2,6 +2,7 @@
 "use client";
 
 import type React from 'react';
+import { useState, useEffect } from 'react';
 import { MountainIcon, Mail, Send } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -9,17 +10,16 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-// import type { Metadata } from 'next';
-
-// export const metadata: Metadata = {
-//   title: 'Contact Us | QRCodeForge',
-//   description: 'Get in touch with Jphabs Khalifa regarding QRCodeForge.',
-// };
 
 export default function ContactPage() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Basic alert, replace with actual form submission logic (e.g., email API, Genkit flow)
     alert("Form submission is not yet implemented. Please use the email link for now!");
   };
 
@@ -64,25 +64,27 @@ export default function ContactPage() {
               
               <div>
                 <h3 className="text-xl font-semibold text-foreground mb-4">Send a Message (Demo)</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <Label htmlFor="name" className="text-muted-foreground">Your Name</Label>
-                    <Input id="name" type="text" placeholder="Jphabs Khalifa" required className="mt-1"/>
-                  </div>
-                  <div>
-                    <Label htmlFor="email" className="text-muted-foreground">Your Email</Label>
-                    <Input id="email" type="email" placeholder="vibe.coder@example.com" required className="mt-1"/>
-                  </div>
-                  <div>
-                    <Label htmlFor="message" className="text-muted-foreground">Message</Label>
-                    <Textarea id="message" placeholder="Your awesome feedback or question..." required rows={5} className="mt-1"/>
-                  </div>
-                  <Button type="submit" className="w-full sm:w-auto">
-                    <Send className="mr-2 h-4 w-4" />
-                    Send Message
-                  </Button>
-                </form>
-                 <p className="text-xs text-muted-foreground mt-2">Note: This form is for demonstration and does not send emails yet. If you have issues with the form, please use the email link above.</p>
+                {isClient && (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <Label htmlFor="name" className="text-muted-foreground">Your Name</Label>
+                      <Input id="name" type="text" placeholder="Jphabs Khalifa" required className="mt-1"/>
+                    </div>
+                    <div>
+                      <Label htmlFor="email" className="text-muted-foreground">Your Email</Label>
+                      <Input id="email" type="email" placeholder="vibe.coder@example.com" required className="mt-1"/>
+                    </div>
+                    <div>
+                      <Label htmlFor="message" className="text-muted-foreground">Message</Label>
+                      <Textarea id="message" placeholder="Your awesome feedback or question..." required rows={5} className="mt-1"/>
+                    </div>
+                    <Button type="submit" className="w-full sm:w-auto">
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </Button>
+                  </form>
+                )}
+                 <p className="text-xs text-muted-foreground mt-2">Note: This form is for demonstration and does not send emails yet. If you have issues with the form, or if it doesn't appear, please use the email link above.</p>
               </div>
 
               <p className="text-sm text-center text-muted-foreground pt-6 border-t border-border">
