@@ -1,4 +1,3 @@
-
 "use client";
 
 import type React from 'react';
@@ -16,7 +15,7 @@ export function AppFooter() {
               &copy; {new Date().getFullYear()} QRCodeForge by Jphabs Khalifa.
             </p>
             <p className="text-xs text-muted-foreground">
-              All rights reserved. Vibe Coding in progress!
+              All rights reserved.
             </p>
           </div>
           <nav className="flex flex-wrap justify-center md:justify-end items-center gap-x-4 gap-y-2 text-sm">
@@ -50,4 +49,3 @@ export function AppFooter() {
     </footer>
   );
 }
-
