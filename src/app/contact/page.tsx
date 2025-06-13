@@ -84,7 +84,6 @@ export default function ContactPage() {
                     </Button>
                   </form>
                 )}
-                 <p className="text-xs text-muted-foreground mt-2">Note: This form is for demonstration and does not send emails yet. If you have issues with the form, or if it doesn't appear, please use the email link above.</p>
               </div>
 
               <p className="text-sm text-center text-muted-foreground pt-6 border-t border-border">
