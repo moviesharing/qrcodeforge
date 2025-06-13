@@ -1,7 +1,7 @@
 
 "use client";
 
-import type React, { SuspenseProps } from 'react';
+import type React from 'react';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation'; // Import useSearchParams
 import { MountainIcon, Mail, Send } from 'lucide-react';
@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { Suspense } from 'react'; // Import Suspense
 import { useToast } from "@/hooks/use-toast";
 
 function ContactContent() {
@@ -99,8 +100,6 @@ function ContactContent() {
   );
 }
 
-import { Suspense } from 'react'; // Import Suspense
-
 export default function ContactPage() {
  return (
     <div className="flex flex-col min-h-screen">
@@ -127,7 +126,6 @@ export default function ContactPage() {
                 As a Vibe Coder, I&apos;m always open to suggestions.
               </CardDescription>
             </CardHeader>
-
 
       <Suspense fallback={<div>Loading contact form...</div>}>
         <ContactContent />
