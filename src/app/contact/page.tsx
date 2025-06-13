@@ -1,4 +1,3 @@
-
 "use client";
 
 import type React from 'react';
@@ -61,7 +60,7 @@ function ContactContent() {
         <h3 className="text-xl font-semibold text-foreground mb-4">Send a Message</h3>
         {isClient && (
           <form
-            action="https://formsubmit.co/jphabswebsites@gmail.com"
+            action="https://formsubmit.co/33c96b1076dde686c53fdb8bbdef0881"
             method="POST"
             className="space-y-4"
           >
@@ -136,4 +135,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
